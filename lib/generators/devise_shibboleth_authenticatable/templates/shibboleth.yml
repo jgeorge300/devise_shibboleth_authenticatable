@@ -1,7 +1,8 @@
-## Enviornments
-
 development:
+  user-mapping: {name: "LAST-NAME", email: "EMAIL"}
 
 test:
+  user-mapping: {name: "LAST-NAME", email: "EMAIL"}
 
 production:
+  user-mapping: {name: "LAST-NAME", email: "EMAIL"}

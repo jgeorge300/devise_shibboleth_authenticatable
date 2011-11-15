@@ -5,6 +5,7 @@ module Devise
     module ShibbolethAuthenticatable
       extend ActiveSupport::Concern
 
+      # Need to determine why these need to be included
       included do
         attr_reader :password, :current_password
         attr_accessor :password_confirmation
@@ -14,11 +15,15 @@ module Devise
         def authenticate_with_shibboleth(env)
 	  resource = User.find_by_email(env['eppn'])
 
-	  resource = new() if (resource.nil?)
+	  resource = User.new() if (resource.nil?)
           return nil unless resource
-          
-          resource.email = env['eppn']	 
-          resource.name = env['LAST-NAME'] 
+
+          SHIBBOLETH_HEADER_MAPPING['user-mapping'].each do |model, header|
+            field = "#{model}="
+            value = env[header]
+            resource.send(field, value.to_s) 
+          end
+
           resource.save
           resource
 	end
