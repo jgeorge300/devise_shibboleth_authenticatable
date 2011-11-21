@@ -17,7 +17,7 @@ module Devise
   @@shibboleth_create_user = false
   
   mattr_accessor :shibboleth_config
-  # @@shibboleth_config = "#{Rails.root}/config/shibboleth.yml"
+  @@shibboleth_config = "#{Rails.root}/config/shibboleth.yml"
   
 end
 
