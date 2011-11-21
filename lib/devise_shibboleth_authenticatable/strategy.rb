@@ -8,25 +8,11 @@ module Devise
       end
 
       def authenticate!
-	eppn = read_shibbolethvars(params)
-        
 	if resource = mapping.to.authenticate_with_shibboleth(request.env)
 	  success!(resource)
         else 
 	  fail!(:invalid)
         end
-
-      end
-
-      protected
-      
-      def read_shibbolethvars(params)
-
-	eppn = request.env['eppn']
-	lname = request.env['LAST-NAME']
-	fname = request.env['FIRST-NAME']
-        eppn
-        
       end
 
     end
