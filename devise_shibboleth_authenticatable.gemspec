@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Joe George"]
-  s.date = "2011-10-18"
+  s.date = "2011-12-01"
   s.description = "Shibboleth authentication module for Devise"
   s.email = "joe.george@osumc.edu"
   s.extra_rdoc_files = [
@@ -19,11 +19,24 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "lib/devise_shibboleth_authenticatable.rb"
+    "devise_shibboleth_authenticatable.gemspec",
+    "lib/devise_shibboleth_authenticatable.rb",
+    "lib/devise_shibboleth_authenticatable/.DS_Store",
+    "lib/devise_shibboleth_authenticatable/exception.rb",
+    "lib/devise_shibboleth_authenticatable/logger.rb",
+    "lib/devise_shibboleth_authenticatable/model.rb",
+    "lib/devise_shibboleth_authenticatable/routes.rb",
+    "lib/devise_shibboleth_authenticatable/schema.rb",
+    "lib/devise_shibboleth_authenticatable/strategy.rb",
+    "lib/devise_shibboleth_authenticatable/version.rb",
+    "lib/generators/devise_shibboleth_authenticatable/install_generator.rb",
+    "lib/generators/devise_shibboleth_authenticatable/templates/shibboleth.yml",
+    "rails/init.rb"
   ]
   s.homepage = "http://github.com/jgeorge300/devise_shibboleth_authenticatable"
   s.require_paths = ["lib"]
@@ -38,20 +51,20 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_runtime_dependency(%q<devise>, ["~> 1.4.0"])
+      s.add_runtime_dependency(%q<devise>, ["> 1.4.0"])
     else
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<devise>, ["~> 1.4.0"])
+      s.add_dependency(%q<devise>, ["> 1.4.0"])
     end
   else
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
     s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<devise>, ["~> 1.4.0"])
+    s.add_dependency(%q<devise>, ["> 1.4.0"])
   end
 end
 

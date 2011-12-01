@@ -32,7 +32,7 @@ begin
     gemspec.email = "joe.george@osumc.edu"
     gemspec.homepage = "http://github.com/jgeorge300/devise_shibboleth_authenticatable"
     gemspec.authors = ["Joe George"]
-    gemspec.add_runtime_dependency "devise", "~> 1.4.0"
+    gemspec.add_runtime_dependency "devise", "> 1.4.0"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
