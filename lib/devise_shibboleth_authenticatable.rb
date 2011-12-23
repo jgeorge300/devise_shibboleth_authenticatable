@@ -6,6 +6,16 @@ require 'devise_shibboleth_authenticatable/logger'
 require 'devise_shibboleth_authenticatable/schema'
 require 'devise_shibboleth_authenticatable/routes'
 
+begin
+  Rails::Engine
+rescue
+else
+  module DeviseShibbolethAuthenticatable
+    class Engine < Rails::Engine
+    end
+  end
+end
+
 # Get shibboleth information from config/shibboleth.yml now
 module Devise
   # Allow logging
@@ -24,7 +34,7 @@ end
 # Add shibboleth_authenticatable strategy to defaults.
 #
 Devise.add_module(:shibboleth_authenticatable,
-                  :route => :session, ## This will add the routes, rather than in the routes.rb
+                  :route => :shibboleth_authenticatable, 
                   :strategy   => true,
-                  :controller => :sessions,
+                  :controller => :shibboleth_sessions,
                   :model  => 'devise_shibboleth_authenticatable/model')

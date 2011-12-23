@@ -1,8 +1,11 @@
 development:
   user-mapping: {name: "LAST-NAME", email: "EMAIL"}
+  shibb_login_url: "https://IdP/Shibboleth.sso/Login"
 
 test:
   user-mapping: {name: "LAST-NAME", email: "EMAIL"}
+  shibb_login_url: "https://IdP/Shibboleth.sso/Login"
 
 production:
   user-mapping: {name: "LAST-NAME", email: "EMAIL"}
+  shibb_login_url: "https://IdP/Shibboleth.sso/Login"
