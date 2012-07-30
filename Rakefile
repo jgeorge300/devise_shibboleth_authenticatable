@@ -1,6 +1,6 @@
 require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rdoc/task'
 
 desc 'Default: run unit tests.'
 task :default => :test
@@ -32,8 +32,8 @@ begin
     gemspec.email = "joe.george@osumc.edu"
     gemspec.homepage = "http://github.com/jgeorge300/devise_shibboleth_authenticatable"
     gemspec.authors = ["Joe George"]
-    gemspec.add_runtime_dependency "devise", "> 1.4.0"
-    gemspec.version = "0.5.0"
+    gemspec.add_runtime_dependency "devise", "> 2.0.0"
+    gemspec.version = "0.6.0"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
