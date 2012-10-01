@@ -1,6 +1,43 @@
 = devise_shibboleth_authenticatable
 
-Devise Shibboleth Authenticatable is a Shibboleth based authentication strategy for the [Devise](http://github.com/plataformatec/devise) authentication framework.
+Devise Shibboleth Authenticatable is a Shibboleth based authentication strategy for the Devise[http://github.com/plataformatec/devise] authentication framework.
+
+== Prerequisites
+* devise ~> 2.0.0 (which requires rails ~> 3.1)
+
+== Usage
+In the Gemfile for your application:
+
+    gem "devise_shibboleth_authenticatable"
+
+To get the latest version, pull directly from github instead of the gem:
+
+    gem "devise_shibboleth_authenticatable", :git => "git://github.com/jgeorge300/devise_shibboleth_authenticatable.git"
+
+== Setup
+Run the rails generators for devise (please check the devise[http://github.com/plataformatec/devise] documents for further instructions)
+
+    rails generate devise:install
+    rails generate devise MODEL_NAME
+
+Run the rails generator for 'devise_shibboleth_authenticatable'
+
+    rails generate devise_shibboleth_authenticatable:install
+
+== Configuration
+In initializer 'config/initializers/devise.rb' :
+
+* config.shibboleth_logger <em>(default: true)</em>
+* config.shibboleth_create_user <em>(default: true)</em>
+* config.shibboleth_config <em>(default:#{Rails.root}/config/shibboleth.yml)</em>
+
+In configuration 'config/shibboleth.yml' :
+
+* user-mapping
+  * A hash-map of the Shibboleth environment variables that you want saved to your User model.
+
+* shibb_login_url
+  * The URL to your Shibboleth IdP
 
 == Contributing to devise_shibboleth_authenticatable
  
@@ -12,8 +49,12 @@ Devise Shibboleth Authenticatable is a Shibboleth based authentication strategy 
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
+== References
+* Devise[http://github.com/plataformatec/devise]
+* Shibboleth[http://shibboleth.net]
+
 == Copyright
 
-Copyright (c) 2011 Joe George. See LICENSE.txt for
+Copyright (c) 2011-12 Joe George. See LICENSE.txt for
 further details.
 
