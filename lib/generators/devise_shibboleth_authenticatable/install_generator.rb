@@ -28,11 +28,11 @@ module DeviseShibbolethAuthenticatable
     
     def default_devise_settings
       settings = <<-eof
-  # ==> Shibboleth Configuration 
+  # ==> Shibboleth Configuration
   # config.shibboleth_logger = true
   # config.shibboleth_create_user = false
   # config.shibboleth_config = "\#{Rails.root}/config/shibboleth.yml"
-  
+
       eof
       if options.advanced?  
         settings << <<-eof  
